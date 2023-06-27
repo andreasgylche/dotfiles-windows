@@ -10,7 +10,7 @@ New-Item -Path "$HOME\dev" -Type Directory; `
 Invoke-WebRequest "https://github.com//andreasgylche/dotfiles-windows/archive/refs/heads/main.zip" `
 -OutFile "$HOME\Downloads\windows-dotfiles.zip"; `
 Get-ChildItem "$HOME\Downloads\" -Filter *.zip | Expand-Archive -DestinationPath "$HOME\dev" -Force; `
-Rename-Item -NewName "windows-dotfiles" -Path "$HOME\dev\windows-dotfiles-master"; `
+Rename-Item -NewName "windows-dotfiles" -Path "$HOME\dev\windows-dotfiles-main"; `
 . "$HOME\dev\windows-dotfiles\Bootstrap.ps1"
 ```
 
