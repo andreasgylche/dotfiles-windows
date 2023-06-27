@@ -11,9 +11,6 @@ Set-NetConnectionProfile -NetworkCategory Private
 # PowerShell Symbolic Link
 New-Item -Force -ItemType SymbolicLink "$HOME\Documents\" -Name "WindowsPowerShell" -Value "$HOME\dev\dotfiles-windows\WindowsPowerShell"
 
-# Install Terminal Icons #
-# Install-Module Terminal-Icons -Scope CurrentUser
-
 ########################
 ## Install Chocolatey ##
 ########################
@@ -31,7 +28,6 @@ choco install starship -y
 choco install nodejs -y
 choco install yarn -y
 choco install pnpm -y
-choco install microsoft-windows-terminal -y
 choco install spotify -y
 
 ################################
