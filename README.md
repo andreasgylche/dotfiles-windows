@@ -24,7 +24,7 @@ Rename-Item -NewName "dotfiles-windows" -Path "$HOME\dev\dotfiles-windows-main";
 
    Create a dev directory in the home directory for our dotfiles to be stored. The directory name can be changed, but all occurances of the directory name have to be changed in this project.
 
-3. `Invoke-WebRequest "https://github.com/nidzov/windows-dotfiles/archive/master.zip" -OutFile "$HOME\Downloads\dotfiles-windows.zip"`
+3. `Invoke-WebRequest "https://github.com/nidzov/dotfiles-windows/archive/master.zip" -OutFile "$HOME\Downloads\dotfiles-windows.zip"`
 
    Download the repository as a zip into the Downloads directory.
 
