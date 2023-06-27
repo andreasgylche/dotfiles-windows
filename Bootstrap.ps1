@@ -11,8 +11,8 @@ Set-NetConnectionProfile -NetworkCategory Private
 # PowerShell Symbolic Link
 New-Item -Force -ItemType SymbolicLink "$HOME\Documents\" -Name "WindowsPowerShell" -Value "$HOME\dev\dotfiles-windows\WindowsPowerShell"
 
-# Install Terminal Icons ##
-Install-Module Terminal-Icons -Scope CurrentUser
+# Install Terminal Icons #
+# Install-Module Terminal-Icons -Scope CurrentUser
 
 ########################
 ## Install Chocolatey ##
@@ -60,7 +60,7 @@ $installation_block = {
 }
 
 # # Invoke new poweshell instance so code is in path
-Start-Process powershell -ArgumentList "-command $installation_block"
+# Start-Process powershell -ArgumentList "-command $installation_block"
 
 ###########################
 ## Create symbolik links ##
@@ -77,17 +77,3 @@ Update-SessionEnvironment
 
 # Clone this repository bare
 git clone --bare git@github.com:ndz-v/dotfiles-windows.git .git
-
-###################
-## Install Fonts ##
-###################
-
-$FontFolder = "./Fonts"
-$FontItem = Get-Item -Path $FontFolder
-$FontList = Get-ChildItem -Path "$FontItem\*" -Include ('*.fon','*.otf','*.ttc','*.ttf')
-
-foreach ($Font in $FontList) {
-        Write-Host 'Installing font -' $Font.BaseName
-        Copy-Item $Font "C:\Windows\Fonts"
-        New-ItemProperty -Name $Font.BaseName -Path "HKLM:\Software\Microsoft\Windows NT\CurrentVersion\Fonts" -PropertyType string -Value $Font.name         
-}
