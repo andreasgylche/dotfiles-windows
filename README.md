@@ -8,10 +8,10 @@ Copy this command into your elevated PowerShell instance and run it to download 
 Set-ExecutionPolicy RemoteSigned; `
 New-Item -Path "$HOME\dev" -Type Directory; `
 Invoke-WebRequest "https://github.com//andreasgylche/dotfiles-windows/archive/refs/heads/main.zip" `
--OutFile "$HOME\Downloads\windows-dotfiles.zip"; `
+-OutFile "$HOME\Downloads\dotfiles-windows.zip"; `
 Get-ChildItem "$HOME\Downloads\" -Filter *.zip | Expand-Archive -DestinationPath "$HOME\dev" -Force; `
-Rename-Item -NewName "windows-dotfiles" -Path "$HOME\dev\windows-dotfiles-main"; `
-. "$HOME\dev\windows-dotfiles\Bootstrap.ps1"
+Rename-Item -NewName "dotfiles-windows" -Path "$HOME\dev\dotfiles-windows-main"; `
+. "$HOME\dev\dotfiles-windows\Bootstrap.ps1"
 ```
 
 ## Explanation of the upper command
@@ -24,7 +24,7 @@ Rename-Item -NewName "windows-dotfiles" -Path "$HOME\dev\windows-dotfiles-main";
 
    Create a dev directory in the home directory for our dotfiles to be stored. The directory name can be changed, but all occurances of the directory name have to be changed in this project.
 
-3. `Invoke-WebRequest "https://github.com/nidzov/windows-dotfiles/archive/master.zip" -OutFile "$HOME\Downloads\windows-dotfiles.zip"`
+3. `Invoke-WebRequest "https://github.com/nidzov/windows-dotfiles/archive/master.zip" -OutFile "$HOME\Downloads\dotfiles-windows.zip"`
 
    Download the repository as a zip into the Downloads directory.
 
@@ -32,10 +32,10 @@ Rename-Item -NewName "windows-dotfiles" -Path "$HOME\dev\windows-dotfiles-main";
 
    Unzip to the dev directory.
 
-5. `Rename-Item -NewName "windows-dotfiles" -Path "$HOME\dev\windows-dotfiles-master"`
+5. `Rename-Item -NewName "dotfiles-windows" -Path "$HOME\dev\dotfiles-windows-main"`
 
    Rename the unzipped folder so branch name is not in the name.
 
-6. `& "$HOME\dev\windows-dotfiles\Bootstrap.ps1"`
+6. `& "$HOME\dev\dotfiles-windows\Bootstrap.ps1"`
 
    Start the installation.
