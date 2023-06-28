@@ -28,7 +28,6 @@ choco install starship -y
 choco install nodejs -y
 choco install yarn -y
 choco install pnpm -y
-choco install spotify -y
 
 ################################
 ## Install VS Code Extensions ##
