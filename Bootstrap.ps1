@@ -67,6 +67,9 @@ New-Item -Force -ItemType SymbolicLink $HOME\ -Name .gitconfig -Value $HOME\dev\
 # Starship config
 New-Item -Force -ItemType SymbolicLink $HOME\.config\ -Name starship.toml -Value $HOME\dev\dotfiles-windows\Starship\starship.toml
 
+# Update the current session environment variables
+Update-SessionEnvironment
+
 # Clone this repository bare
 git clone --bare https://github.com/andreasgylche/dotfiles-windows.git .git
 
