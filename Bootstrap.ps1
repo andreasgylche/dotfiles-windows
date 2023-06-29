@@ -68,4 +68,8 @@ New-Item -Force -ItemType SymbolicLink $HOME\ -Name .gitconfig -Value $HOME\dev\
 New-Item -Force -ItemType SymbolicLink $HOME\.config\ -Name starship.toml -Value $HOME\dev\dotfiles-windows\Starship\starship.toml
 
 # Clone this repository bare
-git clone --bare git@github.com:andreasgylche/dotfiles-windows.git .git
+git clone --bare https://github.com/andreasgylche/dotfiles-windows.git .git
+
+# Convert to normal repository
+git config core.bare false
+git reset --hard
