@@ -7,7 +7,7 @@ function gaa { git add . } # git add all
 function gap { git add -p } # git add patch
 function gcm { git commit -m $args } # git commit + message
 function gpl { git pull } # git pull
-function gps { git push } # git push
+function gpu { git push } # git push
 function gcl { git clone $args } # git clone + url
 function gco { git checkout $args } # git checkout + branch
 function glg { git lg } # git log graph (lg from .gitconfig)
