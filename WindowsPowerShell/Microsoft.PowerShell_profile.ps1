@@ -18,10 +18,6 @@ function gurl {
       break
   }
 
-  # Start-Process chrome $repoUrl
-  # Update (See Below) - by removing the browser,
-  # Windows will use the default browser on your computer. Win! 
-
   Start-Process $repoUrl 
 
 } # open git url
