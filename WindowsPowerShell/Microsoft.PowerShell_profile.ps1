@@ -1,5 +1,8 @@
 Invoke-Expression (&starship init powershell)
 
+# pnpm
+function pn { pnpm $args } # pnpm
+
 # git aliases
 function gss { git status -s } # git status short version
 function gsl { git status --long } # git status long version
