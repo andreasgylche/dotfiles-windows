@@ -31,3 +31,13 @@ function ofd { explorer.exe . } # open current folder in explorer
 function mdir { New-Item $args -Type Directory } # make directory
 function touch { New-Item $args -Type File } # make file
 
+
+# Import the Chocolatey Profile that contains the necessary code to enable
+# tab-completions to function for `choco`.
+# Be aware that if you are missing these lines from your profile, tab completion
+# for `choco` will not function.
+# See https://ch0.co/tab-completion for details.
+$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+if (Test-Path($ChocolateyProfile)) {
+  Import-Module "$ChocolateyProfile"
+}
