@@ -33,7 +33,7 @@ function ... { Set-Location "~"} # go to home folder
 function ofd { explorer.exe . } # open current folder in explorer
 function mdir { New-Item $args -Type Directory } # make directory
 function touch { New-Item $args -Type File } # make file
-
+function vim { nvim } # nvim lazy alias
 
 # Import the Chocolatey Profile that contains the necessary code to enable
 # tab-completions to function for `choco`.
