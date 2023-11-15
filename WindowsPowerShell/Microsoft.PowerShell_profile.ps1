@@ -14,6 +14,7 @@ function gpu { git push } # git push
 function gcl { git clone $args } # git clone + url
 function gco { git checkout $args } # git checkout + branch
 function glg { git lg } # git log graph (lg from .gitconfig)
+function gna { git nah } # abort changes
 function gurl {
   $repoUrl = git config --get remote.origin.url
   if(!$repoUrl) {
